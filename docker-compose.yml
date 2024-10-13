@@ -1,0 +1,24 @@
+---
+networks:
+  ioquake3:
+    external: false
+
+services:
+  ioquake3:
+    build:
+      context: .
+    container_name: ioquake3
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      - MOTD
+      - RCON_PASS
+      - EXTRA_ARGS
+    networks:
+      - ioquake3
+    volumes:
+      - ${BASEQ3_DIR}:/quake/baseq3
+      - ${CONFIG_DIR}:/config
+    ports:
+      - ${QUAKE_PORT}:27960/udp
