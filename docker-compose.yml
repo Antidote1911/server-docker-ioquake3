@@ -19,4 +19,4 @@ services:
       - "/mnt/Partage/Logiciels/quake/baseq3:/quake/baseq3"
       - "/mnt/Partage/Logiciels/quake/config:/config:rw"
     ports:
-      - "27960/udp:27960/udp"
+      - "27960:27960/udp"
