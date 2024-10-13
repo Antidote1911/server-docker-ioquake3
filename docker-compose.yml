@@ -10,7 +10,7 @@ services:
     container_name: ioquake3
     restart: unless-stopped
     env_file:
-      - .env
+      - ioquake3.env
     environment:
       - MOTD
       - RCON_PASS
