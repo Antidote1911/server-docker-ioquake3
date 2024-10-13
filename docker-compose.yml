@@ -9,8 +9,6 @@ services:
       context: .
     container_name: ioquake3
     restart: unless-stopped
-    env_file:
-      - ioquake3.env
     environment:
       - MOTD
       - RCON_PASS
@@ -18,7 +16,7 @@ services:
     networks:
       - ioquake3
     volumes:
-      - ${BASEQ3_DIR}:/quake/baseq3
-      - ${CONFIG_DIR}:/config
+      - "/mnt/Partage/Logiciels/quake/baseq3:/quake/baseq3"
+      - "/mnt/Partage/Logiciels/quake/config:/config:rw"
     ports:
-      - ${QUAKE_PORT}:27960/udp
+      - "27960/udp:27960/udp"
